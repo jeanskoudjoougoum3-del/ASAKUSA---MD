@@ -14,7 +14,7 @@ module.exports = {
 
   // Owner's WhatsApp number, digits only, with country code, no "+", no spaces.
   // +228 99 34 49 51  ->  22899344951
-  ownerNumber: (process.env.OWNER_NUMBER || "22870421276").replace(/\D/g, ""),
+  ownerNumber: (process.env.OWNER_NUMBER || "22899344951").replace(/\D/g, ""),
 
   // "public"  -> anyone can use the bot's commands
   // "private" -> only the owner can use the bot's commands
