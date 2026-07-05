@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+
+# Session WhatsApp (NE JAMAIS partager ce dossier, il contient les clés de connexion)
+session/*
+!session/.gitkeep
+
+# Données locales
+database/data/*.json
+!database/data/.gitkeep
