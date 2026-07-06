@@ -6,7 +6,7 @@ require("dotenv").config();
  */
 module.exports = {
   botName: "ASAKUSA MD",
-  menuTitle: "ASAKUSA MD",
+  menuTitle: "Sarada MD",
   authorTag: "BENIX DEV",
 
   // Default command prefix. Can be changed per-group with .setprefix
@@ -25,6 +25,10 @@ module.exports = {
   // Login method: Baileys pairing code (NOT QR code), as requested.
   // The number used to pair the bot session itself.
   pairingNumber: (process.env.PAIRING_NUMBER || process.env.OWNER_NUMBER || "22899344951").replace(/\D/g, ""),
+
+  // --- Bot image and audio (used for profile picture, menu, alive, connection message) ---
+  botImageUrl: process.env.BOT_IMAGE_URL || null,
+  botAudioUrl: process.env.BOT_AUDIO_URL || null,
 
   // --- Optional external API keys (only needed for some commands) ---
   removeBgApiKey: process.env.REMOVEBG_API_KEY || null,
