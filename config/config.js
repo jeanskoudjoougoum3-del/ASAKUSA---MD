@@ -6,7 +6,7 @@ require("dotenv").config();
  */
 module.exports = {
   botName: "ASAKUSA MD",
-  menuTitle: "Sarada MD",
+  menuTitle: "ASAKUSA MD",
   authorTag: "BENIX DEV",
 
   // Default command prefix. Can be changed per-group with .setprefix
