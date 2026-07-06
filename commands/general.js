@@ -47,14 +47,37 @@ function buildMenuText(ctx) {
 
 module.exports = {
   menu: async (ctx) => {
-    await ctx.reply(buildMenuText(ctx));
+    const text = buildMenuText(ctx);
+    if (config.botImageUrl) {
+      await ctx.sock.sendMessage(ctx.from, {
+        image: { url: config.botImageUrl },
+        caption: text,
+      });
+    } else {
+      await ctx.reply(text);
+    }
   },
 
   alive: async (ctx) => {
     const uptime = formatUptime(process.uptime());
-    await ctx.reply(
-      `✅ *${config.botName}* est en ligne !\n\n⏱️ Uptime : ${uptime}\n📦 Version : ${config.version}\n🔧 Préfixe : ${ctx.prefix}`
-    );
+    const caption =
+      `✅ *${config.botName}* est en ligne !\n\n⏱️ Uptime : ${uptime}\n📦 Version : ${config.version}\n🔧 Préfixe : ${ctx.prefix}`;
+
+    if (config.botImageUrl) {
+      await ctx.sock.sendMessage(ctx.from, {
+        image: { url: config.botImageUrl },
+        caption,
+      });
+    } else {
+      await ctx.reply(caption);
+    }
+
+    if (config.botAudioUrl) {
+      await ctx.sock.sendMessage(ctx.from, {
+        audio: { url: config.botAudioUrl },
+        mimetype: "audio/mp4",
+      });
+    }
   },
 
   ping: async (ctx) => {
